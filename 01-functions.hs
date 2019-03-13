@@ -242,4 +242,3 @@ take 10 ints   -- [1,2,3,4,5,6,7,8,9,10]
 
 evenInts = removeOdd ints
 take 10 evenInts  -- [2,4,6,8,10,12,14,16,18,20]
-
