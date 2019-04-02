@@ -4,7 +4,7 @@
 
 -- Calling a function
 --    No parenthesis
-sqrt 3   -- 1.73205080757  
+sqrt 3   -- 1.73205080757
 max 5 7  -- 7
 max (5+2) (sqrt 17)  -- 7
 
@@ -26,7 +26,7 @@ posOrNeg x =
    else "Negative"
 
 
-{--------------------------------------- 
+{---------------------------------------
  -  Pure Functions
  --------------------------------------}
 
@@ -36,12 +36,12 @@ posOrNeg x =
 --    Given th same arguments, always returns the same output
 
 
-{--------------------------------------- 
- -  Recurstion
+{---------------------------------------
+ -  Recursion
  --------------------------------------}
 
 -- pow2 n = 2 to the power of n
-pow2 n = 
+pow2 n =
    if n == 0
    then 1
    else 2 * (pow2 (n-1))
@@ -101,7 +101,7 @@ double nums =
    then []
    else (2 * (head nums) : (double (tail nums)))
 
-removeOdd nums = 
+removeOdd nums =
    if null nums
    then []
    else
@@ -122,10 +122,10 @@ headAndLenght list = (head list, length list)
 
 -- Accessing tuples
 fst (1, "hello")  -- 1
-snd (1, "hello")  -- "hello"  
+snd (1, "hello")  -- "hello"
 
 {-
- - Pattern Matching 
+ - Pattern Matching
  -}
 
 -- Pattern Matching
@@ -139,8 +139,8 @@ null' (x : xs) = False
 head' (x : xs) = x
 head' [] = error "head of empty list"
 
--- Using Pattern Matching 
-double nums = 
+-- Using Pattern Matching
+double nums =
    if null nums
    then []
    else (2 * (head nums)) : (double (tail nums)))
@@ -171,7 +171,7 @@ removeOdd nums =
 removeOdd [] = []
 removeOdd (x : xs)
    | mod x 2 == 0 = x : (removeOdd xs)
-   | otherwise    = removeOdd xs   
+   | otherwise    = removeOdd xs
 
 
 {---------------------------------------
@@ -194,11 +194,11 @@ anyEven nums = case (removeOdd nums) of
  --------------------------------------}
 
 -- Let Binding
-fancySeven = 
+fancySeven =
    let a = 3
    in 2 * a + 1
 
-fancyNine = 
+fancyNine =
    let x = 4
        y = 5
    in x + y
