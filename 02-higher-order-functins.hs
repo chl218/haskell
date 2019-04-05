@@ -157,4 +157,32 @@ map (\ x -> 2 * x + 1) [1,2,3]  -- [3,5,7]
 --      Too complex: named function
 
 
+{-------------------------------------------------------------------------------
+ - Function Operators
+ ------------------------------------------------------------------------------}
 
+-- (.) - Function Composition
+-- ($) - Function Application
+
+
+-- Function Composition (.)
+stringLength = length . show
+
+stringLength 120    -- 3
+
+stringLength = length . show
+stringLength' x = length (show x)
+
+notNull = now . null
+
+f a b  = a + b
+g x = 2 * x
+
+-- Function Applications ($)
+f $ x = f x
+f $ g x = f (g x)
+f $ g $ h $ k x = f (g (h (k x)))
+
+map (\f -> f 3) [(+1), (\x -> 2*x + 3), (*2)]       -- [4,9,6]
+map ($3) [(+1), (\x -> 2*x + 3), (*2)]              -- [4,9,6]
+zipWith ($) [(+1), (\x -> 2*x + 3), (*2)] [1,2,3]   -- [2,7,6]
